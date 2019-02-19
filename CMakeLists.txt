@@ -26,7 +26,7 @@ fips_setup()
     if (${SOLOUD_DYNAMIC})
         fips_begin_sharedlib(soloud)
     elseif(${SOLOUD_STATIC})
-        fips_begin_lib(Soloud)
+        fips_begin_lib(soloud)
     endif()
 
         # fips_ide_group(Imports/soloud)
