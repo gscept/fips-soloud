@@ -13,15 +13,20 @@ fips_setup()
     set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/soloud/contrib/cmake;${CMAKE_MODULE_PATH}")
     # include("${PROJECT_SOURCE_DIR}/soloud/contrib/cmake/FindSDL2.cmake")
 
+    set (WINDOWS_DEFAULT_BACKEND OFF)
+
+    if (FIPS_WINDOWS)
+        set (WINDOWS_DEFAULT_BACKEND ON)
+
     option (SOLOUD_DYNAMIC "Set to ON to build dynamic SoLoud" OFF)
     option (SOLOUD_STATIC "Set to ON to build static SoLoud" ON)
     option (SOLOUD_BACKEND_NULL "Set to ON for building NULL backend" ON)
-    option (SOLOUD_BACKEND_SDL2 "Set to ON for building SDL2 backend" ON)
+    option (SOLOUD_BACKEND_SDL2 "Set to ON for building SDL2 backend" OFF)
     option (SOLOUD_BACKEND_COREAUDIO "Set to ON for building CoreAudio backend" OFF)
     option (SOLOUD_BACKEND_OPENSLES "Set to ON for building OpenSLES backend" OFF)
     option (SOLOUD_BACKEND_XAUDIO2 "Set to ON for building XAudio2 backend" OFF)
     option (SOLOUD_BACKEND_WINMM "Set to ON for building WINMM backend" OFF)
-    option (SOLOUD_BACKEND_WASAPI "Set to ON for building WASAPI backend" OFF)
+    option (SOLOUD_BACKEND_WASAPI "Set to ON for building WASAPI backend" WINDOWS_DEFAULT_BACKEND)
 
     if (${SOLOUD_DYNAMIC})
         fips_begin_sharedlib(soloud)
