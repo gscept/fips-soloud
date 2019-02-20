@@ -17,6 +17,7 @@ fips_setup()
 
     if (FIPS_WINDOWS)
         set (WINDOWS_DEFAULT_BACKEND ON)
+    endif()
 
     option (SOLOUD_DYNAMIC "Set to ON to build dynamic SoLoud" OFF)
     option (SOLOUD_STATIC "Set to ON to build static SoLoud" ON)
