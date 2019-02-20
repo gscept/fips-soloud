@@ -137,8 +137,6 @@ fips_setup()
             )
         endif()
 
-        message(STATUS "${BACKENDS_SOURCES}")
-
         fips_dir(.)
         fips_files(${BACKENDS_SOURCES})
 
