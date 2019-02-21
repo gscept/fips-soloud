@@ -1,0 +1,3 @@
+[submodule "nebula-soloud"]
+	path = nebula-soloud
+	url = https://github.com/fLindahl/nebula-soloud.git
